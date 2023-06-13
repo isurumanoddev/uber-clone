@@ -1,6 +1,5 @@
 'use client'
 
-import tw from "tailwind-styled-components";
 
 import mapboxgl from "!mapbox-gl"
 import {useEffect} from "react";

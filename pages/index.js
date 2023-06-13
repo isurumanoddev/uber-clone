@@ -1,9 +1,10 @@
 'use client'
 
 import "mapbox-gl/dist/mapbox-gl.css"
-import Maps from "@/app/components/Maps";
+
 import {Avatar} from "@mui/material";
-import tw from "tailwind-styled-components";
+
+import Maps from "@/pages/components/Maps";
 
 
 export default function Home() {
