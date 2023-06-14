@@ -29,35 +29,37 @@ export default function Home() {
                     </div>
                 </header>
                 <div className="flex flex-row basis-1/5 justify-center  items-center ">
-
-                    <button
-                        className={"flex text-sm flex-col transform hover:scale-105 transition-all  justify-center items-center px-6 py-3   m-1   rounded-md bg-gray-200"}>
-                        <img className={"h-3/5 "} src="https://i.ibb.co/cyvcpfF/uberx.png" alt=""/>
-                        Ride
-                    </button>
-                    <button
-                        className={"flex text-sm flex-col transform hover:scale-105 transition-all justify-center items-center px-6 py-3   m-1   rounded-md bg-gray-200"}>
-                        <img className={"h-3/5 "} src="https://i.ibb.co/n776JLm/uberx.png" alt=""/>
-                        Wheels
-                    </button>
-                    <button
-                        className={"flex text-sm flex-col transform hover:scale-105 transition-all justify-center items-center px-6 py-3   m-1   rounded-md bg-gray-200"}>
-                        <img className={"h-3/5 "} src="https://i.ibb.co/5RjchBg/uberschedule.png" alt=""/>
-                        Reserve
-                    </button>
+                    <Link href={"/search"}>
+                        <button
+                            className={"flex text-sm flex-col transform hover:scale-105 transition-all  justify-center items-center px-6 py-3   m-1   rounded-md bg-gray-200"}>
+                            <img className={"h-3/5 "} src="https://i.ibb.co/cyvcpfF/uberx.png" alt=""/>
+                            Ride
+                        </button>
+                    </Link>
+                    <Link href={"/search"}>
+                        <button
+                            className={"flex text-sm flex-col transform hover:scale-105 transition-all justify-center items-center px-6 py-3   m-1   rounded-md bg-gray-200"}>
+                            <img className={"h-3/5 "} src="https://i.ibb.co/n776JLm/uberx.png" alt=""/>
+                            Wheels
+                        </button>
+                    </Link>
+                    <Link href={"/confirm"}>
+                        <button
+                            className={"flex text-sm flex-col transform hover:scale-105 transition-all justify-center items-center px-6 py-3   m-1   rounded-md bg-gray-200"}>
+                            <img className={"h-3/5 "} src="https://i.ibb.co/5RjchBg/uberschedule.png" alt=""/>
+                            Reserve
+                        </button>
+                    </Link>
 
 
                 </div>
-                <Link href={"/search"}>
 
 
-                    <div
-                        className="h-20 bg-gray-200  text-2xl mt-2 rounded flex flex-col justify-center items-center transform hover:scale-102 transition">
-                        <h3 className="text-xl mb-2 pl-2 self-start">Where to ? </h3>
+                <div
+                    className="h-20 bg-gray-200  text-2xl mt-2 rounded flex flex-col justify-center items-center transform hover:scale-102 transition">
+                    <h3 className="text-xl mb-2 pl-2 self-start">Where to ? </h3>
 
-                    </div>
-
-                </Link>
+                </div>
 
 
             </div>

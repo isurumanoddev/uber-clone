@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import {Add, ArrowBack, PlusOne, Stars} from "@mui/icons-material";
 import Link from "next/link";
@@ -22,9 +24,9 @@ function Search() {
                     <img src="" alt="" className="w-10"/>
                 </div>
                 <div className="flex flex-col w-full gap-3 flex-1">
-                    <input className="px-3 py-2 w-full bg-gray-200 rounded text-sm"
+                    <input className="px-3 py-2 w-full bg-gray-200 rounded text-sm outline-none"
                            placeholder={"Enter pickup location"}/>
-                    <input className="px-3 py-2 w-full bg-gray-200 rounded text-sm"
+                    <input className="px-3 py-2 w-full bg-gray-200 rounded text-sm outline-none"
                            placeholder={"Enter pickup location"}/>
                 </div>
                 <div className={"w-8 m-2"}>
@@ -38,7 +40,7 @@ function Search() {
                 <p className="pl-2">Saved Places</p>
             </div>
             <div className="w-full p-2 flex gap-2">
-                <button className="m-3 bg-black text-white w-full py-2 rounded transition ">Confirm Location</button>
+                <button className="m-3 bg-black text-white w-full py-2 rounded transition  ">Confirm Location</button>
             </div>
 
 
