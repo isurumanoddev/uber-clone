@@ -5,6 +5,7 @@ import "mapbox-gl/dist/mapbox-gl.css"
 import {Avatar} from "@mui/material";
 
 import Maps from "@/pages/components/Maps";
+import Link from "next/link";
 
 
 export default function Home() {
@@ -47,10 +48,16 @@ export default function Home() {
 
 
                 </div>
-                <div className="h-20 bg-gray-200  text-2xl mt-2 rounded flex flex-col justify-center items-center transform hover:scale-102 transition">
-                    <h3 className="text-xl mb-2 pl-2 self-start">Where to ? </h3>
+                <Link href={"/search"}>
 
-                </div>
+
+                    <div
+                        className="h-20 bg-gray-200  text-2xl mt-2 rounded flex flex-col justify-center items-center transform hover:scale-102 transition">
+                        <h3 className="text-xl mb-2 pl-2 self-start">Where to ? </h3>
+
+                    </div>
+
+                </Link>
 
 
             </div>
