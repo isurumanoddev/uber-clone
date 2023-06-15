@@ -12,8 +12,6 @@ function Search() {
     const [location_1, setLocation_1] = useState("")
     const [location_2, setLocation_2] = useState("")
 
-    console.log("location_1 : ", location_1)
-    console.log("location_2 : ", location_2)
 
 
 

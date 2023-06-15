@@ -37,7 +37,7 @@ function Maps({pickupCoordinates, dropoffCoordinates}) {
                 map.fitBounds([
                     pickupCoordinates ? pickupCoordinates : [78.4912, 6.9271], dropoffCoordinates ? dropoffCoordinates : [80.4912, 6.9271]
                 ], {
-                    padding: 50
+                    padding: 80
                 })
             }catch (e) {
                 console.log(e)

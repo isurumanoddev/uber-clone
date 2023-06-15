@@ -7,6 +7,9 @@ import Maps from "@/pages/components/Maps";
 
 import {useRouter} from "next/router";
 import RideSelector from "@/pages/components/RideSelector";
+import Link from "next/link";
+import {IconButton} from "@mui/material";
+import {ArrowBack} from "@mui/icons-material";
 
 
 function Confirm() {
@@ -16,8 +19,8 @@ function Confirm() {
     const {location_1, location_2} = router.query
 
 
-    const [pickupCoordinates, setPickupCoordinates] = useState([])
-    const [dropoffCoordinates, setDropoffCoordinates] = useState([])
+    const [pickupCoordinates, setPickupCoordinates] = useState([0,0])
+    const [dropoffCoordinates, setDropoffCoordinates] = useState([0,0])
 
     const getPickup = async () => {
 
@@ -57,16 +60,29 @@ function Confirm() {
 
 
     return (<div className={"flex flex-col h-screen"}>
+         <div className={"absolute top-0 left-0 right-0 z-10"}>
+                <Link href={"/search"}>
+
+                    <IconButton className={"m-2 bg-gray-200  transition text-sm"}>
+                        <ArrowBack className={"text-black font-bold text-xl"}/>
+                    </IconButton>
+
+                </Link>
+            </div>
         <Maps
             pickupCoordinates={pickupCoordinates}
             dropoffCoordinates={dropoffCoordinates}
 
         />
-        <div className="flex flex-col flex-1">
-            <div className="flex flex-col basis-4/5  overflow-y-scroll">
+        <div className="flex flex-col flex-1 h-1/2">
+            <div className="flex justify-center items-center text-xs py-2 border-b text-opacity-40">Choose a ride ,or
+                swipe up fore
+                more
+            </div>
+            <div className="flex flex-col basis-4/5  overflow-y-scroll scrollbar-hide">
 
 
-                <RideSelector/>
+                <RideSelector pickup={pickupCoordinates} dropoff={dropoffCoordinates}/>
 
 
             </div>
