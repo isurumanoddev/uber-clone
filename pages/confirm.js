@@ -6,6 +6,7 @@ import "mapbox-gl/dist/mapbox-gl.css"
 import Maps from "@/pages/components/Maps";
 
 import {useRouter} from "next/router";
+import RideSelector from "@/pages/components/RideSelector";
 
 
 function Confirm() {
@@ -13,7 +14,6 @@ function Confirm() {
     const router = useRouter()
 
     const {location_1, location_2} = router.query
-
 
 
     const [pickupCoordinates, setPickupCoordinates] = useState([])
@@ -65,16 +65,10 @@ function Confirm() {
         <div className="flex flex-col flex-1">
             <div className="flex flex-col basis-4/5  overflow-y-scroll">
 
-                <h1 className="p-4 text-3xl">location 1 </h1>
-                {pickupCoordinates.map(value => (
 
-                    <h1 className="p-4 text-3xl">{value}</h1>
-                ))}
-                <h1 className="p-4 text-3xl">location 2 </h1>
-                {dropoffCoordinates.map(value => (
+                <RideSelector/>
 
-                    <h1 className="p-4 text-3xl">{value}</h1>
-                ))}
+
             </div>
             <div className={"basis-1/5 bg-amber-50 flex justify-center items-center p-3"}>
                 <button className=" bg-black text-white w-full py-3 rounded transition  ">Confirm UberX
