@@ -1,3 +1,13 @@
+# Uber Clone - Ride-Hailing App
+This project is an Uber clone built using Next.js, React.js, and Tailwind CSS. It aims to replicate the functionality of the popular ride-hailing app, Uber, using modern frontend technologies.
+
+# Features
+User Authentication: Users can sign up, log in, and log out using their email addresses or social media accounts, ensuring a secure and personalized experience.
+
+Ride Booking: Users can request rides by specifying their pickup and drop-off locations, and the app will display available drivers nearby.
+
+Responsive Design: The user interface is designed to be responsive, providing an optimal viewing experience across various devices, including desktops, tablets, and mobile phones.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
