@@ -1,8 +1,28 @@
-import React from 'react';
+
+
+import React, {useEffect} from 'react';
 import {Avatar, Button} from "@mui/material";
+
 import {Google} from "@mui/icons-material";
 
+import {signInWithPopup,onAuthStateChanged } from "firebase/auth"
+import {useRouter} from "next/router";
+import {auth, provider} from "@/firebase";
+
+
 function Login() {
+    const router = useRouter()
+
+
+
+    useEffect(() => {
+        onAuthStateChanged(auth,user => {
+            if (user) {
+                router.push("/")
+            }
+        })
+    },[])
+
     return (
         <div className={" h-screen p-6"}>
             <header className="flex basis-1/5   ">
@@ -18,7 +38,7 @@ function Login() {
 
             </div>
             <div className={"w-full "}>
-                <Button className="flex gap-4 w-full bg-black text-white rounded py-3   hover:bg-black ">
+                <Button onClick={() => signInWithPopup(auth,provider)} className="flex gap-4 w-full bg-black text-white rounded py-3   hover:bg-black ">
                     <Google className={"text-white text-2xl"}/>Sign in with Google</Button>
 
             </div>
