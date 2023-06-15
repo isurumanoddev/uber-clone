@@ -15,22 +15,9 @@ function Maps({pickupCoordinates, dropoffCoordinates}) {
         const map = new mapboxgl.Map({
             container: "map",
             style: 'mapbox://styles/mapbox/satellite-streets-v12',
-            center: [79.4912, 6.9271],
+            center: [80.4912, 6.9271],
             zoom: 7.5
         });
-
-
-    }, []);
-
-    useEffect(() => {
-
-        const map = new mapboxgl.Map({
-            container: "map",
-            style: 'mapbox://styles/mapbox/satellite-streets-v12',
-            center: [79.4912, 6.9271],
-            zoom: 7.5
-        });
-
 
         if (pickupCoordinates) {
 
@@ -42,6 +29,22 @@ function Maps({pickupCoordinates, dropoffCoordinates}) {
             addToMap(map, dropoffCoordinates)
 
         }
+        if (pickupCoordinates && dropoffCoordinates) {
+
+
+
+            try {
+                map.fitBounds([
+                    pickupCoordinates ? pickupCoordinates : [78.4912, 6.9271], dropoffCoordinates ? dropoffCoordinates : [80.4912, 6.9271]
+                ], {
+                    padding: 50
+                })
+            }catch (e) {
+                console.log(e)
+
+            }
+
+        }
 
 
     }, [pickupCoordinates, dropoffCoordinates]);
@@ -49,12 +52,9 @@ function Maps({pickupCoordinates, dropoffCoordinates}) {
 
     const addToMap = (map, coordinates) => {
 
-        console.log("pickupCoordinates : ", [coordinates[0], coordinates[1]])
-
-
         const marker1 = new mapboxgl.Marker()
-        .setLngLat([coordinates[0] ? coordinates[0] : 79.4912,coordinates[1] ? coordinates[1] : 6.9271 ]) // Specify the coordinates of the marker
-        .addTo(map);
+            .setLngLat([coordinates[0] ? coordinates[0] : 79.4912, coordinates[1] ? coordinates[1] : 6.9271]) // Specify the coordinates of the marker
+            .addTo(map);
 
     }
 
