@@ -70,7 +70,7 @@ function Confirm() {
 
 
             </div>
-            <div className={"basis-1/5 bg-amber-50 flex justify-center items-center p-3"}>
+            <div className={"basis-1/5  flex justify-center items-center p-3 border-t-2"}>
                 <button className=" bg-black text-white w-full py-3 rounded transition  ">Confirm UberX
                 </button>
             </div>
