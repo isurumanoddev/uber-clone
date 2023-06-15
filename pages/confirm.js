@@ -5,38 +5,45 @@ import "mapbox-gl/dist/mapbox-gl.css"
 
 import Maps from "@/pages/components/Maps";
 
+import {useRouter} from "next/router";
 
 
 function Confirm() {
 
-    const [pickupCoordinates,setPickupCoordinates] = useState([])
-    const [dropoffCoordinates,setDropoffCoordinates] = useState([])
+    const router = useRouter()
 
-    const getPickup =async () => {
-
-        const pickUp = "colombo"
+    const {location_1, location_2} = router.query
 
 
-         const response = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${pickUp}.json?` + new URLSearchParams({
-             access_token: "pk.eyJ1IjoiaXN1cnVtYW5vZCIsImEiOiJjbGlzdW84MWcwaWY2M2VvejNzbGR0NnNuIn0.FNwzFhyS3DnoRTMNEkgeyw",
-             limit:1,
-         }))
-        const data =await response.json()
+
+    const [pickupCoordinates, setPickupCoordinates] = useState([])
+    const [dropoffCoordinates, setDropoffCoordinates] = useState([])
+
+    const getPickup = async () => {
+
+        const pickUp = location_1
+
+
+        const response = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${pickUp}.json?` + new URLSearchParams({
+            access_token: "pk.eyJ1IjoiaXN1cnVtYW5vZCIsImEiOiJjbGlzdW84MWcwaWY2M2VvejNzbGR0NnNuIn0.FNwzFhyS3DnoRTMNEkgeyw",
+            limit: 1,
+        }))
+        const data = await response.json()
 
 
         setPickupCoordinates(data["features"][0].center)
     }
 
-    const getDropoff =async () => {
+    const getDropoff = async () => {
 
-        const dropOff = "kandy"
+        const dropOff = location_2
 
 
-         const response = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${dropOff}.json?` + new URLSearchParams({
-             access_token: "pk.eyJ1IjoiaXN1cnVtYW5vZCIsImEiOiJjbGlzdW84MWcwaWY2M2VvejNzbGR0NnNuIn0.FNwzFhyS3DnoRTMNEkgeyw",
-             limit:1,
-         }))
-        const data =await response.json()
+        const response = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${dropOff}.json?` + new URLSearchParams({
+            access_token: "pk.eyJ1IjoiaXN1cnVtYW5vZCIsImEiOiJjbGlzdW84MWcwaWY2M2VvejNzbGR0NnNuIn0.FNwzFhyS3DnoRTMNEkgeyw",
+            limit: 1,
+        }))
+        const data = await response.json()
 
 
         setDropoffCoordinates(data["features"][0].center)
@@ -47,8 +54,6 @@ function Confirm() {
         getPickup()
         getDropoff()
     }, [])
-
-
 
 
     return (<div className={"flex flex-col h-screen"}>

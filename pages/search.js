@@ -5,13 +5,17 @@ import {Add, ArrowBack, PlusOne, Stars} from "@mui/icons-material";
 import Link from "next/link";
 import {IconButton} from "@mui/material";
 
+
 function Search() {
+
 
     const [location_1, setLocation_1] = useState("")
     const [location_2, setLocation_2] = useState("")
 
     console.log("location_1 : ", location_1)
     console.log("location_2 : ", location_2)
+
+
 
 
     return (
@@ -51,19 +55,18 @@ function Search() {
             </div>
 
             <Link href={{
-                pathname:"/confirm",
-                query:{
-                    location_1:location_1,
-                    location_2:location_2,
-                }
-
+                pathname: "/confirm",
+                query: {
+                location_1: location_1,
+                location_2: location_2,
+            }
             }}>
                 <div className="w-full p-2 flex gap-2">
                     <button className="m-3 bg-black text-white w-full py-2 rounded transition  ">Confirm Location
                     </button>
+
                 </div>
             </Link>
-
 
         </div>
     );
