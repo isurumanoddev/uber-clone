@@ -6,9 +6,20 @@ import {Avatar} from "@mui/material";
 
 import Maps from "@/pages/components/Maps";
 import Link from "next/link";
+import {signOut,onAuthStateChanged} from "firebase/auth"
+import {useEffect} from "react";
+import {auth} from "@/firebase";
+import {useRouter} from "next/router";
 
 
 export default function Home() {
+    useEffect(() => {
+        return onAuthStateChanged(auth,useRouter  => {
+            if (user){
+                
+            }
+        })
+    },[])
 
 
     return (
